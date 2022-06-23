@@ -1,0 +1,52 @@
+version: "3.8"
+
+services:
+
+  rstudio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: my-rstudio-image:latest
+    ports:
+      - "8888:8888"
+    environment:
+      - RESTARTABLE=yes
+      - GRANT_SUDO=yes
+      - SHELL=/bin/zsh
+    volumes:
+      - ${PWD}:/home/jovyan/work
+    command:
+      - start-notebook.sh
+      - --LabApp.default_url=/rstudio
+
+# version: '3.8'
+# 
+# services:
+# 
+#   jupyterlab:
+# 
+#     image: dddlab/diy-chart-dev:latest
+# 
+#     build:
+#       context: ./
+#       dockerfile: Dockerfile
+# 
+#     ports:
+#       - 443:8888
+# 
+#     user: root
+# 
+#     environment:
+#       - RESTARTABLE=yes
+#       - GEN_CERT=yes
+#       - GRANT_SUDO=yes
+#       - SHELL=/bin/zsh
+#       # - DOCKER_STACKS_JUPYTER_CMD=lab
+# 
+#     volumes:
+#       - ${PWD}:/home/jovyan/llll
+# 
+#     # default password is "diy-cloud" (without the quotes)
+#     command:
+#       - start-notebook.sh
+#       - --ServerApp.password=sha1:3c5a4b522718:bf63e22afd2f2d08d9ef0262f69697c9fa4baa2c
