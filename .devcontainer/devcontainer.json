@@ -11,7 +11,7 @@
 			"onAutoForward": "openBrowser"
 		}
 	},
-	"otherPortsAttributes": {"onAutoForward": "openBrowser"},
+	"otherPortsAttributes": {"onAutoForward": "silent"},
 	"postCreateCommand": "rmdir /home/jovyan/work && ln -s /workspaces/rstudio /home/jovyan/work",
 	"remoteUser": "jovyan"
 }

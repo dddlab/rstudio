@@ -24,4 +24,4 @@ RUN pip install --no-cache-dir \
     jupyter lab build
 
 COPY --chown="${NB_UID}:${NB_GID}" \
-    library-scripts/get-rstudio-url.sh /opt/conda/bin/
+    library-scripts/get-token.sh /opt/conda/bin/
