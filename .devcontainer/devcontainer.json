@@ -3,8 +3,8 @@
 {
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "rstudio",
+	"overrideCommand": false,
 	"workspaceFolder": "/home/jovyan/work",
-	// "overrideCommand": false,
 	"otherPortsAttributes": {"onAutoForward": "openBrowser"},
 	// Forward Jupyter port locally, mark required
 	// "forwardPorts": [8888],
