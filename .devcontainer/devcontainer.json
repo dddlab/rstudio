@@ -15,6 +15,14 @@
 	// 		"onAutoForward": "openBrowser"
 	// 	}
 	// },
+	"forwardPorts": [8888],
+	"portsAttributes": {
+		"8888": {
+			"label": "Jupyter",
+			"requireLocalPort": true,
+			"onAutoForward": "openBrowser"
+		}
+	},
 
 	// // Configure tool-specific properties.
 	// "customizations": {
