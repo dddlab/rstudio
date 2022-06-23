@@ -1,5 +1,5 @@
 #/bin/bash
 
-TOKEN=$(jupyter lab list | grep -o 'token=[[:alnum:]]*')
+TOKEN=$(jupyter lab list | grep -o 'token=[[:alnum:]]*' | sed 's/token=//')
 
-echo "http://127.0.0.1:8888/?$TOKEN"
+echo "Login Token: $TOKEN"

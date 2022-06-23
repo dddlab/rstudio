@@ -5,8 +5,8 @@
 	"service": "rstudio",
 	"workspaceFolder": "/home/jovyan/work",
 	// "overrideCommand": false,
-	
-	// // // Forward Jupyter port locally, mark required
+	"otherPortsAttributes": {"onAutoForward": "openBrowser"},
+	// Forward Jupyter port locally, mark required
 	// "forwardPorts": [8888],
 	// "portsAttributes": {
 	// 	"8888": {

@@ -8,7 +8,7 @@ services:
       dockerfile: Dockerfile
     image: my-rstudio-image:latest
     ports:
-      - "8888:8888"
+      - "127.0.0.1:8888:8888"
     environment:
       - RESTARTABLE=yes
       - GRANT_SUDO=yes
