@@ -9,6 +9,8 @@ RUN curl --silent -L --fail \
     apt-get update && \
     apt-get install -y --no-install-recommends \
         /tmp/rstudio.deb lmodern && \
+    groupadd jovyan && \
+    usermod -g jovyan -a -G users jovyan && \
     bash /tmp/library-scripts/common-debian.sh && \
     apt-get clean -y && \
     rm -rf /tmp/rstudio.deb /var/lib/apt/lists/* /tmp/library-scripts
@@ -21,4 +23,5 @@ RUN pip install --no-cache-dir \
     jupyter labextension install @jupyterlab/server-proxy@3.2.1 && \
     jupyter lab build
 
-COPY --chown="${NB_UID}:${NB_GID}" library-scripts/get-rstudio-url.sh /opt/conda/bin/
+COPY --chown="${NB_UID}:${NB_GID}" \
+    library-scripts/get-rstudio-url.sh /opt/conda/bin/
