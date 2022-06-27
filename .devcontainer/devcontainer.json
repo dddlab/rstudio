@@ -1,14 +1,5 @@
 {
-	"build": {
-		"dockerFile": "Dockerfile",
-		"context": "..",
-		"args": {
-			"RESTARTABLE": "yes",
-			"GRANT_SUDO": "yes",
-			"SHELL": "/bin/zsh"
-		}
-	},
-	"workspaceFolder": "/home/jovyan/work",
+	"workspaceFolder": "/workspace",
 	"forwardPorts": [8888],
 	"portsAttributes": {
 		"8888": {
@@ -19,5 +10,12 @@
 	},
 	"otherPortsAttributes": {"onAutoForward": "silent"},
 	"postCreateCommand": "rmdir /home/jovyan/work && ln -s /workspaces/rstudio /home/jovyan/work",
-	"remoteUser": "jovyan"
+	"remoteUser": "jovyan",
+	"dockerComposeFile": [
+		"../docker-compose.yml",
+	],
+	"service": "rstudio",
+	"customizations": {
+		"vscode": {}
+	}
 }
