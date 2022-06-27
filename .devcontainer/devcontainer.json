@@ -1,7 +1,13 @@
 {
-	"dockerComposeFile": "docker-compose.yml",
-	"service": "rstudio",
-	"overrideCommand": false,
+	"build": {
+		"dockerFile": "Dockerfile",
+		"context": "..",
+		"args": {
+			"RESTARTABLE": "yes",
+			"GRANT_SUDO": "yes",
+			"SHELL": "/bin/zsh"
+		}
+	},
 	"workspaceFolder": "/home/jovyan/work",
 	"forwardPorts": [8888],
 	"portsAttributes": {
