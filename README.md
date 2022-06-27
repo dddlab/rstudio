@@ -26,6 +26,15 @@ First, you need [access to Codespaces](https://docs.github.com/en/codespaces/dev
 
 Here are the steps:
 
-1. Clone the repository
-2. Symlink the contents of `.devcontainer` to the root of the directory
-3. Run `docker-compose build rstudio` and `docker-compose up`
+```bash
+# Clone this repository
+git clone https://github.com/dddlab/rstudio
+cd rstudio
+
+# Symlink .devcontainer contents except devcontainer.json
+ln -s .devcontainer/!(devcontainer.json) .
+
+# Build image and start container
+docker-compose build rstudio
+docker-compose up
+```
