@@ -1,18 +1,10 @@
 {
 	"workspaceFolder": "/workspace",
-	"forwardPorts": [8888],
-	"portsAttributes": {
-		"8888": {
-			"label": "RStudio",
-			"requireLocalPort": true,
-			"onAutoForward": "openBrowser"
-		}
-	},
 	"otherPortsAttributes": {"onAutoForward": "silent"},
 	"postCreateCommand": "rmdir /home/jovyan/work && ln -s /workspaces/rstudio /home/jovyan/work",
 	"remoteUser": "jovyan",
 	"dockerComposeFile": [
-		"../docker-compose.yml",
+		"../docker-compose.yml"
 	],
 	"service": "rstudio",
 	"customizations": {
