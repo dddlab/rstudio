@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 TOKEN=$(jupyter lab list | grep -o 'token=[[:alnum:]]*' | sed 's/token=//')
 
