@@ -6,6 +6,8 @@ services:
     build:
       context: .
       dockerfile: .devcontainer/Dockerfile
+      args:
+        COPY_CONTEXT: .devcontainer
     image: my-rstudio-image:latest
     ports:
       - "127.0.0.1:8888:8888"

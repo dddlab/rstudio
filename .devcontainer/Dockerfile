@@ -2,8 +2,8 @@ FROM jupyter/r-notebook:2022-06-20
 
 USER root
 
-COPY .devcontainer/library-scripts/common-debian.sh /tmp/library-scripts/
-COPY .devcontainer/library-scripts/get-token.sh /opt/conda/bin/
+COPY ${COPY_CONTEXT}/library-scripts/common-debian.sh /tmp/library-scripts/
+COPY ${COPY_CONTEXT}/library-scripts/get-token.sh /opt/conda/bin/
 # COPY --chown="${NB_UID}:${NB_GID}" library-scripts/get-token.sh /opt/conda/bin/
 
 RUN curl --silent -L --fail \

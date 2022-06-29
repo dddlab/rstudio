@@ -3,7 +3,8 @@
 {
 	"name": "Jupyter Data Science Notebooks (Community)",
 	"build": {
-		"dockerfile": "Dockerfile"
+		"dockerfile": "Dockerfile",
+		"args": { "COPY_CONTEXT": "." }
 	},
 	"overrideCommand": false,
 	
