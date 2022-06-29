@@ -18,4 +18,3 @@ services:
     command:
       - start-notebook.sh
       - --LabApp.default_url=/rstudio
-
