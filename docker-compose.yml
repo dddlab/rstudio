@@ -1,1 +1,20 @@
-.devcontainer/docker-compose.yml
+version: "3.8"
+
+services:
+
+  rstudio:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+      args:
+        COPY_CONTEXT: .devcontainer
+    image: my-rstudio-image:latest
+    ports:
+      - "127.0.0.1:8888:8888"
+    environment:
+      - RESTARTABLE=yes
+      - GRANT_SUDO=yes
+      - SHELL=/bin/zsh
+    volumes:
+      - ${PWD}:/home/jovyan/work
+      - ${PWD}:/workspaces/rstudio

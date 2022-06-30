@@ -2,9 +2,9 @@ FROM jupyter/r-notebook:2022-06-20
 
 USER root
 
-COPY library-scripts/common-debian.sh /tmp/library-scripts/
-COPY library-scripts/get-token.sh /opt/conda/bin/
-# COPY --chown="${NB_UID}:${NB_GID}" library-scripts/get-token.sh /opt/conda/bin/
+ARG COPY_CONTEXT=.
+COPY ${COPY_CONTEXT}/library-scripts/common-debian.sh /tmp/library-scripts/
+COPY --chown="${NB_UID}:${NB_GID}" ${COPY_CONTEXT}/library-scripts/get-token.sh /opt/conda/bin/
 
 RUN curl --silent -L --fail \
         https://download2.rstudio.org/server/bionic/amd64/rstudio-server-2022.02.3-492-amd64.deb > /tmp/rstudio.deb && \
@@ -24,7 +24,3 @@ RUN pip install --no-cache-dir \
         jupyter-rsession-proxy==2.0.1 && \
     jupyter labextension install @jupyterlab/server-proxy@3.2.1 && \
     jupyter lab build
-
-# COPY --chown="${NB_UID}:${NB_GID}" library-scripts/get-token.sh /opt/conda/bin/
-# COPY library-scripts/get-token.sh /tmp/library-scripts/
-# COPY library-scripts/get-token.sh /opt/conda/bin/
