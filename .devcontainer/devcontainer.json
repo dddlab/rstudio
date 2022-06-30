@@ -34,7 +34,7 @@
 		}
 	},
 
-	"workspaceFolder": "/home/jovyan/work",
+	"workspaceFolder": "/workspaces/rstudio",
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "rmdir /home/jovyan/work && ln -s /workspaces/rstudio /home/jovyan/work",
