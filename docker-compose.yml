@@ -18,6 +18,3 @@ services:
     volumes:
       - ${PWD}:/home/jovyan/work
       - ${PWD}:/workspaces/rstudio
-    command:
-      - start-notebook.sh
-      - --LabApp.default_url=/rstudio
