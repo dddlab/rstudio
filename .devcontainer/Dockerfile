@@ -9,7 +9,7 @@ RUN apt-get update && \
 
 USER ${NB_UID}
 
-## RUN pip install --no-cache-dir jupyter-rsession-proxy
-RUN pip install git+https://github.com/ryanlovett/jupyter-rsession-proxy@95759d85e95de6cb102702762d23f74ae2d46baa
+RUN pip install --no-cache-dir jupyter-rsession-proxy==2.2.0
+## RUN pip install git+https://github.com/ryanlovett/jupyter-rsession-proxy@95759d85e95de6cb102702762d23f74ae2d46baa
 
 ## RUN alias get-jupyter-token="jupyter server list | grep -o 'token=[[:alnum:]]*' | sed 's/token=//'"
