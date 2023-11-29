@@ -11,4 +11,4 @@ USER ${NB_UID}
 
 RUN pip install --no-cache-dir jupyter-rsession-proxy
 
-RUN alias get-jupyter-token="jupyter server list | grep -o 'token=[[:alnum:]]*' | sed 's/token=//'"
+## RUN alias get-jupyter-token="jupyter server list | grep -o 'token=[[:alnum:]]*' | sed 's/token=//'"
