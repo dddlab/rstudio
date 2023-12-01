@@ -40,7 +40,10 @@
 	"remoteUser": "jovyan",
 	"runArgs": [
 			"--user=root",
+			"--env=NB_USER=jovyan",
+			"--env=CHOWN_HOME=yes",
 			"--env=GRANT_SUDO=yes",
-			"--env=RESTARTABLE=yes"
+			"--env=RESTARTABLE=yes",
+			"--workdir=/home/jovyan"
 	]
 }
